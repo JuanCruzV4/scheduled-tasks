@@ -6,7 +6,7 @@
 # See the solution video in the 100 Days of Python Course for explainations.
 
 
-from datetime import datetime
+from datetime import datetime, timezone
 import pandas
 import random
 import smtplib
@@ -16,7 +16,7 @@ import os
 MY_EMAIL = os.environ.get("MY_EMAIL")
 MY_PASSWORD = os.environ.get("MY_PASSWORD")
 
-today = datetime.utcnow()
+today = datetime.now(timezone.utc)
 today_tuple = (today.month, today.day)
 
 data = pandas.read_csv("birthdays.csv")
